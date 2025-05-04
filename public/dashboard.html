@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Receitas</title>
+
+  <!-- BOOTSTRAP -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <script src="js/bootstrap.bundle.min.js"></script>
+
+  <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+  <div class="container text-center mt-5">
+    <h1>Bem-vindo!</h1>
+  
+    <!-- Campo de busca -->
+    <input type="text" class="my-5" id="recipeSearch" placeholder="Buscar receitas..." oninput="filterRecipes()">
+    
+    <h2>Receitas Populares:</h2>
+  
+    <ul id="recipeList">
+      <li>Brigadeiro</li>
+      <li>Feijoada</li>
+      <li>Bolo de Chocolate</li>
+      <li>Frango Assado</li>
+      <li>Macarrão à Bolonhesa</li>
+    </ul>
+  </div>
+  
+  <script>
+    function filterRecipes() {
+      const searchQuery = document.getElementById('recipeSearch').value.toLowerCase(); // obtém o valor do campo de busca
+      const recipeItems = document.querySelectorAll('#recipeList li');
+      
+      recipeItems.forEach(item => {
+        const recipeName = item.textContent.toLowerCase();
+        if (recipeName.includes(searchQuery)) { // verifica se o nome da receita inclui a consulta de busca
+          item.style.display = '';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>

@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="css/dashboard.css">
 </head>
 <body>
-  <div class="container text-center mt-5">
+  <div class="container text-center py-5">
     <h1>Bem-vindo!</h1>
   
     <!-- Campo de busca -->
@@ -20,29 +20,11 @@
     
     <h2>Receitas Populares:</h2>
   
-    <ul id="recipeList">
-      <li>Brigadeiro</li>
-      <li>Feijoada</li>
-      <li>Bolo de Chocolate</li>
-      <li>Frango Assado</li>
-      <li>Macarrão à Bolonhesa</li>
-    </ul>
+    <div id="recipeList" class="container my-4">
+
+    </div>
   </div>
   
-  <script>
-    function filterRecipes() {
-      const searchQuery = document.getElementById('recipeSearch').value.toLowerCase(); // obtém o valor do campo de busca
-      const recipeItems = document.querySelectorAll('#recipeList li');
-      
-      recipeItems.forEach(item => {
-        const recipeName = item.textContent.toLowerCase();
-        if (recipeName.includes(searchQuery)) { // verifica se o nome da receita inclui a consulta de busca
-          item.style.display = '';
-        } else {
-          item.style.display = 'none';
-        }
-      });
-    }
-  </script>
+  <script src="js/dashboard.js"></script>
 </body>
 </html>

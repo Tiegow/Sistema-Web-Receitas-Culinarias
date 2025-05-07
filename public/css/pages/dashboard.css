@@ -1,34 +1,3 @@
-:root {
-    --cor-preto: #161A1D;
-    --cor-branco: #F5F3F4;
-    --cor-primaria: #A4161A;
-    --cor-secundaria: #660708;
-    --cor-terciaria: #FCA311;
-    --cor-background: #0F1519;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html, body {
-    width: 100%;
-    height: 100%;
-    font-family: "Racing Sans One", sans-serif;
-    font-weight: 400;
-    font-size: 24px;
-    font-style: normal;
-    color: var(--cor-preto);
-    background-color: var(--cor-branco);
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
 .recipe-card {
     display: flex;
     align-items: stretch;

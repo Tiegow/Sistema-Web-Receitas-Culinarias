@@ -4,24 +4,38 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login</title>
+
+  <!-- BOOTSTRAP -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <script src="js/bootstrap.bundle.min.js"></script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/pages/index.css">
 </head>
 <body>
-  <h1>Login</h1>
-  <form id="loginForm">
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" required>
+  <div class="container my-5">
+    <div class="mx-auto mainForm p-5">
+      <form id="loginForm">
+        <label for="email">Email</label> <br>
+        <input class="form-input" type="email" id="email" name="email" placeholder="Seu email" required>
+    
+        <br><br>
+    
+        <label for="password">Senha</label> <br>
+        <input class="form-input" type="password" id="password" name="password" minlength="6" placeholder="Sua senha" required>
+    
+        <br><br>
+    
+        <button class="submit-btn mt-3" type="submit">Entrar</button>
+      </form>
 
-    <br><br>
+      <a href="register.html"><button class="cadastrar-btn my-4">Cadastre-se</button></a>
 
-    <label for="password">Senha:</label>
-    <input type="password" id="password" name="password" minlength="6" required>
+      <!-- <p>Não tem uma conta? <a href="register.html">Cadastre-se</a></p> -->
+    </div>
 
-    <br><br>
-
-    <button type="submit">Entrar</button>
-  </form>
-
-  <p>Não tem uma conta? <a href="register.html">Cadastre-se</a></p>
+  </div>
 
   <script src="js/login.js"></script>
 </body>

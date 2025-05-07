@@ -4,34 +4,46 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cadastro</title>
+
+  <!-- BOOTSTRAP -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <script src="js/bootstrap.bundle.min.js"></script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/pages/index.css">
 </head>
 <body>
-  <h1>Cadastro</h1>
-  <form id="registerForm">
-    <label for="name">Nome:</label>
-    <input type="text" id="name" name="name" required>
+  <div class="container my-5">
+    <div class="mx-auto mainForm p-5">
+      <form id="registerForm">
+        <label for="name">Nome:</label> <br>
+        <input class="form-input" type="text" id="name" name="name" placeholder="Como quer ser chamado?" required>
+        
+        <br><br>
     
-    <br><br>
-
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" required>
+        <label for="email">Email:</label> <br>
+        <input class="form-input" type="email" id="email" name="email" placeholder="Seu email" required>
+        
+        <br><br>
     
-    <br><br>
-
-    <label for="password">Senha:</label>
-    <input type="password" id="password" name="password" minlength="6" required>
+        <label for="password">Senha:</label> <br>
+        <input class="form-input" type="password" id="password" name="password" minlength="6" placeholder="Sua senha" required>
+        
+        <br><br>
     
-    <br><br>
+        <label for="confirmPassword">Confirmar Senha:</label> <br>
+        <input class="form-input" type="password" id="confirmPassword" name="confirmPassword" minlength="6" placeholder="Sim, de novo" required>
+    
+        <br><br>
+    
+        <button class="submit-btn mt-3" type="submit">Cadastrar</button>
+      </form>
 
-    <label for="confirmPassword">Confirmar Senha:</label>
-    <input type="password" id="confirmPassword" name="confirmPassword" minlength="6" required>
+      <a href="index.html"><button class="cadastrar-btn my-4">Voltar</button></a>
+    </div>
 
-    <br><br>
-
-    <button type="submit">Cadastrar</button>
-  </form>
-
-  <p>Já tem uma conta? <a href="index.html">Fazer login</a></p>
+  </div>
 
   <script src="js/register.js"></script>
 </body>

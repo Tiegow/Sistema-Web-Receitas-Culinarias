@@ -1,0 +1,35 @@
+.mainForm {
+    background-color: white;
+    max-width: 560px
+}
+
+.mainForm label {
+    margin: 10px 0;
+    color: var(--cor-texto-laranja);
+    font-weight: bold;
+}
+
+.form-input {
+    font-size: 16px;
+    width: 100%;
+    padding: 15px 10px;
+    border: 1px solid #BFBFBF;
+    border-radius: 15px;
+}
+
+.mainForm button {
+    padding: 10px 0;
+    color: white;
+    width: 100%;
+    margin: 0 auto;
+    border: none;
+    border-radius: 12px;
+}
+
+.submit-btn {
+    background-color: var(--cor-primaria);
+}
+
+.cadastrar-btn {
+    background-color: var(--cor-botao-secundario);
+}

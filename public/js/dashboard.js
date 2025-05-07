@@ -1,6 +1,6 @@
 window.addEventListener('DOMContentLoaded', loadRecipes);
 
-const receitas = [
+const posts = [
     {
       titulo: 'Bolo de Cenoura',
       imagem: 'https://conteudo.imguol.com.br/c/entretenimento/c8/2023/01/31/bolo-de-cenoura-low-carb-fit-1675176378739_v2_300x400.jpg',
@@ -27,7 +27,7 @@ async function loadRecipes() {
     const container = document.querySelector('#recipeList'); // onde os cards serão inseridos
     container.innerHTML = ''; // limpa antes de inserir
   
-    receitas.forEach(receita => {
+    posts.forEach(receita => {
       let cardHTML = template
         .replace('{{imagem}}', receita.imagem)
         .replace('{{titulo}}', receita.titulo)

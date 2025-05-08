@@ -15,3 +15,5 @@ entre as listadas.
 
 ## Relatório
 Acesse em: <a href="https://www.overleaf.com/read/nbnhtyjfvkmt#087a1c"> https://www.overleaf.com/read/nbnhtyjfvkmt#087a1c</a>
+
+<a href="https://www.figma.com/design/jU02dBOdk5m7zkxZTIDIlp/Prototipo-WEB1?node-id=1-2&p=f&t=SLskKCe1UO9bOULY-0">Interfaces</a>

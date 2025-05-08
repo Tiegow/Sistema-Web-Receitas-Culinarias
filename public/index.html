@@ -7,36 +7,62 @@
 
   <!-- BOOTSTRAP -->
   <link rel="stylesheet" href="css/bootstrap.min.css">
-  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js" defer></script>
 
   <!-- CSS -->
   <link rel="stylesheet" href="css/global.css">
   <link rel="stylesheet" href="css/pages/index.css">
 </head>
-<body>
-  <div class="container my-5">
-    <div class="mx-auto mainForm p-5">
+<body style="background-color: #f7f7f7;">
+  <div class="container d-flex justify-content-center align-items-center vh-100">
+    <div class="bg-white p-5 rounded-4 shadow" style="max-width: 498px; width: 100%; margin-top: -20px">
+      
+      <!-- LOGO  -->
+      <div class="text-center mb-4">
+        <img src="img/logo.png" alt="CookShare Logo" style="height: 95px; margin: -15px;">
+      </div>
+
+      <!-- FORMULÁRIO -->
       <form id="loginForm">
-        <label for="email">Email</label> <br>
-        <input class="form-input" type="email" id="email" name="email" placeholder="Seu email" required>
-    
-        <br><br>
-    
-        <label for="password">Senha</label> <br>
-        <input class="form-input" type="password" id="password" name="password" minlength="6" placeholder="Sua senha" required>
-    
-        <br><br>
-    
-        <button class="submit-btn mt-3" type="submit">Entrar</button>
-      </form>
+        <div class="mb-3">
+          <label for="email" class="label-login">Login</label>
+          <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
 
-      <a href="register.html"><button class="cadastrar-btn my-4">Cadastre-se</button></a>
+        </div>
 
-      <!-- <p>Não tem uma conta? <a href="register.html">Cadastre-se</a></p> -->
+        <div class="mb-1">
+          <label for="password" class="label-login">Senha</label>
+          <input type="password" class="form-control" id="password" name="password" placeholder="************" required>
+        </div>
+
+        <div class="mb-4 text-end">
+          
+          <a href="#" class="forgot-password">Esqueci a senha</a>
+        </div>
+
+        <div class="d-grid mb-2">
+          <button type="submit" class="btn fw-bold text-white mb-2" style="background-color: #f25c05;">Entrar</button>
+        </div>
+        
+        <div class="d-grid">
+          <a href="register.html">
+            <button type="button" class="btn btn-secondary w-100">Cadastre-se</button>
+          </a>
+        </div>
+
+      </form>     
     </div>
 
+    <!-- RODAPE -->
+    <footer class="text-center text-muted small bg-transparent" style="position: fixed; bottom: 25px; width: 100%;color: #2C2B2B; font-size: 10px;">
+      CookShare 2025.
+    </footer>
+    
   </div>
+  
 
+  <!-- SCRIPT -->
   <script src="js/login.js"></script>
+  
 </body>
 </html>

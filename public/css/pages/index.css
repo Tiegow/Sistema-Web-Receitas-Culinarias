@@ -1,16 +1,25 @@
 .mainForm {
     background-color: white;
-    max-width: 560px
+    max-width: auto;
 }
 
 .mainForm label {
-    margin: 10px 0;
-    color: var(--cor-texto-laranja);
+    margin: 07px 0;
+    color: #F65E2C;
+    font-size: 18px;
     font-weight: bold;
 }
 
+.label-login {
+    margin: 07px 0;
+    color: #F65E2C;
+    font-size: 18px;
+    font-weight: bold;
+    
+}
+
 .form-input {
-    font-size: 16px;
+    font-size: 12px;
     width: 100%;
     padding: 15px 10px;
     border: 1px solid #BFBFBF;
@@ -24,12 +33,43 @@
     margin: 0 auto;
     border: none;
     border-radius: 12px;
+    
 }
 
 .submit-btn {
     background-color: var(--cor-primaria);
+    color: #F65E2C;
 }
 
 .cadastrar-btn {
-    background-color: var(--cor-botao-secundario);
+    background-color: #6c757d;
 }
+
+.forgot-password {
+    color: #F65E2C;
+    text-align: right;
+    font-size: 16px;
+    
+  }
+  
+  .form-control::placeholder {
+    color: #747474;
+    font-size: 0.7rem;
+    text-align: top;
+    
+  }
+
+.mensagem-cookShare2025{
+    color: #2C2B2B;
+    font-size: 9px;
+    text-align: center;
+    width: 100;
+    position: absolute;
+}
+.logo {
+    height: 95px;
+    margin: -15px;
+    display: block;
+    
+  }
+  

@@ -13,36 +13,53 @@
   <link rel="stylesheet" href="css/global.css">
   <link rel="stylesheet" href="css/pages/index.css">
 </head>
-<body>
-  <div class="container my-5">
-    <div class="mx-auto mainForm p-5">
+<body style="background-color: #f7f7f7;">
+  <div class="container d-flex justify-content-center" style="min-height: 70vh; align-items: center;">
+    <div class="bg-white mainForm p-5 rounded-4 shadow" 
+         style="max-width: 494px; width: 100%; margin-top: 40px; margin-bottom: 30px; margin-bottom: -2px;">
+
+      <!-- LOGO  -->
+      <img src="img/logo.png" alt="CookShare Logo" class="logo mb-2 d-block" style="height: 95px;">
+
       <form id="registerForm">
-        <label for="name">Nome:</label> <br>
-        <input class="form-input" type="text" id="name" name="name" placeholder="Como quer ser chamado?" required>
+        <div class="mb-1">
+          <label for="email" class="label-login">Email</label>
+          <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
+        </div>
         
-        <br><br>
+        <div class="mb-1">
+        <label for="userName" class="label-login">Usuário</label>
+          <input type="userName" class="form-control" id="userName" name="userName" placeholder="Escolha um nome de usuário" required>
+        </div>
     
-        <label for="email">Email:</label> <br>
-        <input class="form-input" type="email" id="email" name="email" placeholder="Seu email" required>
+        <div class="mb-1">
+        <label for="password" class="label-login">Senha</label>
+          <input type="password" class="form-control" id="password" name="password" placeholder="************" required>
+        </div>
         
-        <br><br>
+        <div class="mb-1">
+        <label for="confirmPassword" class="label-login">Confirmar senha</label>
+          <input type="password" class="form-control" id="confirmPassword" name="password" placeholder="A senha deve ser igual a senha inserida acima" required>
+         </div> 
     
-        <label for="password">Senha:</label> <br>
-        <input class="form-input" type="password" id="password" name="password" minlength="6" placeholder="Sua senha" required>
+         <div class="d-grid mt-4">
+         
+            <button type="submit" class="btn fw-bold text-white mb-3" style="background-color: #f25c05;">Cadastrar</button>
+          
+        </div>
         
-        <br><br>
-    
-        <label for="confirmPassword">Confirmar Senha:</label> <br>
-        <input class="form-input" type="password" id="confirmPassword" name="confirmPassword" minlength="6" placeholder="Sim, de novo" required>
-    
-        <br><br>
-    
-        <button class="submit-btn mt-3" type="submit">Cadastrar</button>
+        <div class="d-grid">
+          <a href="index.html">
+            <button type="button" class="btn btn-secondary w-100">Voltar</button>
+          </a>
+        </div>
       </form>
 
-      <a href="index.html"><button class="cadastrar-btn my-4">Voltar</button></a>
     </div>
-
+    <!-- RODAPE -->
+    <footer class="text-center text-muted small bg-transparent" style="position: fixed; bottom: 25px; width: 100%;color: #2C2B2B; font-size: 10px;">
+      CookShare 2025.
+    </footer>
   </div>
 
   <script src="js/register.js"></script>

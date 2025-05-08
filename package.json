@@ -1,15 +1,24 @@
 {
   "name": "web",
   "version": "1.0.0",
-  "description": "",
+  "description": "Uma plataforma de compartilhamento de receitas culinárias, onde os usuários podem criar, visualizar e buscar receitas. No sistema, será possível navegar por um conjunto de receitas disponíveis na plataforma, que poderão ser buscadas por nome, ingredientes ou categoria (por exemplo, \"Doces\", \"Pratos principais\", etc.).",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^5.1.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tiegow/Sistema-Web-Receitas-Culinarias.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Tiegow/Sistema-Web-Receitas-Culinarias/issues"
+  },
+  "homepage": "https://github.com/Tiegow/Sistema-Web-Receitas-Culinarias#readme"
 }

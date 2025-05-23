@@ -4,7 +4,7 @@ const errorMsg = document.getElementById('passwordError');
 errorMsg.style.display = 'none';
 
 registerForm.addEventListener('submit', async function(event) {
-    event.preventDefault(); // Previne o envio padrão do formulário (enquanto não implementado o backend)
+    event.preventDefault(); // Previne o envio padrão do formulário
 
     const email = document.getElementById('email').value;
     const username = document.getElementById('userName').value;

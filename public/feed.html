@@ -11,18 +11,37 @@
 
   <!-- CSS -->
   <link rel="stylesheet" href="css/global.css">
-  <link rel="stylesheet" href="css/pages/dashboard.css">
+  <link rel="stylesheet" href="css/components/cardReceita.css">
+  <link rel="stylesheet" href="css/pages/feed.css">
 </head>
 <body>
   <div id="header"></div>
 
-  <div class="container text-center py-5">
-    <h1>Bem-vindo!</h1>
-  
-    <!-- Campo de busca -->
-    <input type="text" class="my-5" id="recipeSearch" placeholder="Buscar receitas..." oninput="filterRecipes()">
-    
-    <h2>Receitas Populares:</h2>
+  <div class="feed container text-center py-2 mt-5">
+    <div class="feed-actions d-flex align-items-center justify-content-center gap-4 py-4 pt-5">
+      <!-- Campo de busca -->
+      <input type="text" class="form-control" id="recipeSearch" placeholder="Pesquise por nome, ingrediente ou autor..." oninput="filterRecipes()">
+
+      <!-- Dropdown de filtros -->
+      <div class="dropdown py-2">
+        <button class="filter btn btn-secondary dropdown-toggle py-2" type="button" id="recipeFilterDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+          Filtrar
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="recipeFilterDropdown">
+          <li><a class="dropdown-item" href="#" onclick="filterBy('todas')">Todas</a></li>
+          <li><a class="dropdown-item" href="#" onclick="filterBy('doces')">Doces</a></li>
+          <li><a class="dropdown-item" href="#" onclick="filterBy('salgadas')">Salgadas</a></li>
+          <li><a class="dropdown-item" href="#" onclick="filterBy('veganas')">Veganas</a></li>
+        </ul>
+      </div>
+
+      <!-- Botão de compartilhar -->
+       <a href="/add-receita">
+        <button class="add d-flex align-items-center gap-2 py-2 px-3" type="button">
+          <img src="./img/add.png" alt="add">Compartilhar receita
+        </button>
+       </a>
+    </div>
   
     <div id="recipeList" class="container my-4">
 

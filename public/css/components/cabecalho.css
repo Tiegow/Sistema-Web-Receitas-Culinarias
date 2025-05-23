@@ -12,3 +12,14 @@ header span{
 .header-logo img {
     width: 348px;
 }
+
+.header-actions img {
+    margin-right: 40px;
+}
+
+.header-profile {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--cor-botao-secundario);
+}

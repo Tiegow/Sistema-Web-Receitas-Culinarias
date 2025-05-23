@@ -1,0 +1,14 @@
+header {
+    background-color: var(--cor-branco);
+}
+
+header span{
+    margin-left: 30px;
+    font-size: 40px;
+    font-weight: bold;
+    color: var(--cor-secundaria);
+}
+
+.header-logo img {
+    width: 348px;
+}

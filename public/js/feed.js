@@ -1,4 +1,7 @@
-window.addEventListener('DOMContentLoaded', loadRecipes);
+window.addEventListener('DOMContentLoaded', () => {
+  loadRecipes();
+  loadComponent('components/cabecalho.html', 'header', 'css/components/cabecalho.css');
+});
 
 const posts = [
     {

@@ -7,7 +7,13 @@
 }
 
 .feed-actions {
+  position: sticky;
+  top: 0;
+  z-index: 1;
   border-bottom: 3px solid rgba(214, 214, 214, 0.51);
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
+  background-color: var(--cor-branco);
 }
 
 .feed #recipeSearch {
@@ -38,4 +44,6 @@
   background-color: var(--cor-botao-secundario);
   border: 1px solid var(--cor-preto);
   min-width: 200px;
+  color: var(--cor-preto);
+  font-weight: bold;
 }

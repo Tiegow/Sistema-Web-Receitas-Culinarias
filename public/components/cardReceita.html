@@ -1,14 +1,38 @@
-<div class="recipe-card mx-auto">
-    <div class="img-container">
-        <img src="{{imagem}}" alt="Imagem da receita">
+<div class="recipe-post mt-5">
+    <div class="post-profile mb-3">
+        <div class="post-profile-img">
+            <img />
+        </div>
+        <div class="post-profile-info ms-2">
+            <p class="fw-bold my-0">@{{usuario}}</p>
+            <p class="my-0">{{data}}</p>
+        </div>
     </div>
     
-    <div class="recipe-content">
-        <h2>{{titulo}}</h2>
-        <p class="date">Publicado em: {{data}}</p>
-        <p class="description">
-            {{descricao}}
-        </p>
+    <div class="recipe-card mx-auto">      
+        <div class="recipe-content">
+            <h2>{{titulo}}</h2>
+            <p>{{descricao}}</p>
+            
+            <h3>Ingredientes</h3>
+            <h4>Massa:</h4>
+            <div class="ingredientes-wrapper">
+                <ul class="ingredientes-list">
+
+                </ul>
+                <a href="#" class="leia-mais-ingredientes d-none">Leia mais</a>
+            </div>
+        </div>
+
+        <div class="img-container">
+            <img src="{{imagem}}" alt="Imagem da receita">
+        </div>
+    </div>
+
+
+
+    <div class="post-actions">
+
     </div>
 </div>
   

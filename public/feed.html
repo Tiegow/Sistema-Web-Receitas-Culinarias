@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Receitas</title>
+  <title>CookShare - Feed</title>
 
   <!-- BOOTSTRAP -->
   <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -17,8 +17,9 @@
 <body>
   <div id="header"></div>
 
-  <div class="feed container text-center py-2 mt-5">
-    <div class="feed-actions d-flex align-items-center justify-content-center gap-4 py-4 pt-5">
+  <div class="feed container text-center p-2 mt-5">
+    <!-- Ações do feed -->
+    <div class="feed-actions d-flex align-items-center justify-content-center gap-4 py-4">
       <!-- Campo de busca -->
       <input type="text" class="form-control" id="recipeSearch" placeholder="Pesquise por nome, ingrediente ou autor..." oninput="filterRecipes()">
 
@@ -43,12 +44,12 @@
        </a>
     </div>
   
-    <div id="recipeList" class="container my-4">
+    <div id="recipeList" class="my-4">
 
     </div>
   </div>
   
   <script src="js/global.js"></script>
-  <script src="js/feed.js"></script>
+  <script src="js/pages/feed.js"></script>
 </body>
 </html>

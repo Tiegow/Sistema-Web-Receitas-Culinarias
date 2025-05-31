@@ -14,10 +14,15 @@ router.get('/', (req, res) => {
 
 router.get('/feed', (req,res) => {
   res.sendFile(path.join(__dirname, 'public', 'feed.html'));
+  console.log("entrou em feed");
 })
 
 router.get('/add-receita', (req,res) => {
   res.sendFile(path.join(__dirname, 'public', 'addReceita.html'));
+})
+
+router.get('/detalhes', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'detalhes.html'));
 })
 
 router.post('/login', (req, res) => {

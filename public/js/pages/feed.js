@@ -1,12 +1,19 @@
 window.addEventListener('DOMContentLoaded', async () => {
-  await loadReceitas();
+  await filterBy(null);
   loadComponent('components/cabecalho.html', 'header');
 });
 
-async function loadReceitas() {
-  const response = await fetch('/api/feed');
-  const receitas = await response.json();
+async function filterBy(categoria) {
+  let response = null;
+  let receitas = null;
 
+  if (categoria) {
+    response = await fetch('/api/feed?categoria=' + categoria);
+  } else {
+    response = await fetch('/api/feed');
+  }
+  
+  receitas = await response.json();
   renderReceitas(receitas);
 }
 
@@ -59,9 +66,9 @@ async function renderReceitas(receitas) {
   });
 }
 
-function filterRecipes() {
+function searchRecipes() {
     const searchQuery = document.getElementById('recipeSearch').value.toLowerCase(); // obtém o valor do campo de busca
-    const recipeItems = document.querySelectorAll('#recipeList .recipe-card');
+    const recipeItems = document.querySelectorAll('#recipeList .recipe-post');
     
     recipeItems.forEach(item => {
         const titleElement = item.querySelector('h2'); // busca o <h2> dentro do card

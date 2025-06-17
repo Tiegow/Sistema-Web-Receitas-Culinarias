@@ -24,6 +24,7 @@ router.get('/detalhes', (req, res) => {
 // Simulação de BD
 const posts = [
   {
+    id: 1,
     usuario: 'Ana_na_Cozinha',
     titulo: 'Bolo de Cenoura com Cobertura de Chocolate',
     imagem: 'https://conteudo.imguol.com.br/c/entretenimento/c8/2023/01/31/bolo-de-cenoura-low-carb-fit-1675176378739_v2_300x400.jpg',
@@ -31,18 +32,49 @@ const posts = [
     descricao: 'Um clássico bolo de cenoura fofinho com cobertura de chocolate.',
     categoria: ['Doces', 'Veganas'],
     ingredientes: [
-      '1. Cenoura',
-      '2. Ovos',
-      '3. Açúcar',
-      '4. Óleo',
-      '5. Farinha de trigo',
-      '6. Fermento em pó',
-      '7. Chocolate em pó',
-      '8. Leite',
-      '9. Manteiga'
+      {
+        session_title: 'Massa',
+        items: [
+          '3 cenouras médias descascadas e picadas',
+          '3 ovos',
+          '2 xícaras de açúcar',
+          '1 xícara de óleo',
+          '2 xícaras de farinha de trigo',
+          '1 colher de sopa de fermento em pó',
+        ]
+      },
+      {
+        session_title: 'Cobertura',
+        items: [
+          '200g de chocolate meio amargo',
+          '1 caixinha de creme de leite',
+          '2 colheres de sopa de manteiga',
+        ]
+      },
+    ],
+    preparo: [
+      {
+        session_title: 'Massa',
+        items: [
+          'Preaqueça o forno a 180°C.',
+          'No liquidificador, bata as cenouras, ovos, açúcar e óleo até obter uma mistura homogênea.',
+          'Em uma tigela, misture a farinha de trigo e o fermento.',
+          'Despeje a mistura do liquidificador na tigela e mexa bem até incorporar.',
+          'Coloque em uma forma untada e enfarinhada e asse por cerca de 40 minutos ou até dourar.'
+        ]
+      },
+      {
+        session_title: 'Cobertura',
+        items: [
+          'Derreta o chocolate em banho-maria ou no micro-ondas.',
+          'Misture o creme de leite e a manteiga até obter uma cobertura lisa.',
+          'Despeje sobre o bolo já frio e sirva.'
+        ]
+      }
     ]
   },
   {
+    id: 2,
     usuario: 'Ana_na_Cozinha',
     titulo: 'Pão de Queijo',
     imagem: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuBRLjSAIm48zNKn-zUKET-HjSRfAdTNehuQ&s',
@@ -50,11 +82,23 @@ const posts = [
     descricao: 'Receita mineira autêntica de pão de queijo crocante por fora, macio por dentro.',
     categoria: ['Salgados'],
     ingredientes: [
-      '1. Polvilho doce',
-      '2. Queijo minas ralado',
+      'Polvilho doce',
+      'Queijo minas ralado',
+    ],
+    preparo: [
+      { session_title: 'Massa',
+        items: [
+          'Em uma tigela, misture 500g de polvilho doce com 250ml de leite quente.',
+          'Adicione 100ml de óleo e misture bem.',
+          'Incorpore 2 ovos, 200g de queijo minas ralado e sal a gosto.',
+          'Modele pequenas bolinhas e coloque em uma assadeira untada.',
+          'Asse em forno pré-aquecido a 180°C por cerca de 20 minutos ou até dourar.'
+        ]
+      },
     ]
   },
   {
+    id: 3,
     usuario: 'Ana_na_Cozinha',
     titulo: 'Lasanha de Carne',
     imagem: 'https://www.receiteria.com.br/wp-content/uploads/lasanha-de-carne-moida.jpeg',
@@ -62,18 +106,19 @@ const posts = [
     descricao: 'Receita de lasanha de carne com bastante queijo e sabor irresistível.',
     categoria: ['Salgados'],
     ingredientes: [
-      '1. Massa para lasanha',
-      '2. Carne moída',
-      '3. Molho de tomate',
-      '4. Cebola',
-      '5. Alho',
-      '6. Queijo mussarela',
-      '7. Presunto',
-      '8. Sal',
-      '9. Orégano'
+      'Massa para lasanha',
+      'Carne moída',
+      'Molho de tomate',
+      'Cebola',
+      'Alho',
+      'Queijo mussarela',
+      'Presunto',
+      'Sal',
+      'Orégano'
     ]
   },
   {
+    id: 4,
     usuario: 'Ana_na_Cozinha',
     titulo: 'Bolo de Cenoura',
     imagem: 'https://conteudo.imguol.com.br/c/entretenimento/c8/2023/01/31/bolo-de-cenoura-low-carb-fit-1675176378739_v2_300x400.jpg',
@@ -81,18 +126,19 @@ const posts = [
     descricao: 'Um clássico bolo de cenoura fofinho com cobertura de chocolate.',
     categoria: ['Doces'],
     ingredientes: [
-      '1. Cenoura',
-      '2. Ovos',
-      '3. Açúcar',
-      '4. Óleo',
-      '5. Farinha de trigo',
-      '6. Fermento em pó',
-      '7. Chocolate em pó',
-      '8. Leite',
-      '9. Manteiga'
+      'Cenoura',
+      'Ovos',
+      'Açúcar',
+      'Óleo',
+      'Farinha de trigo',
+      'Fermento em pó',
+      'Chocolate em pó',
+      'Leite',
+      'Manteiga'
     ]
   },
   {
+    id: 5,
     usuario: 'Ana_na_Cozinha',
     titulo: 'Pão de Queijo',
     imagem: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuBRLjSAIm48zNKn-zUKET-HjSRfAdTNehuQ&s',
@@ -100,18 +146,19 @@ const posts = [
     descricao: 'Receita mineira autêntica de pão de queijo crocante por fora, macio por dentro.',
     categoria: ['Salgados'],
     ingredientes: [
-      '1. Polvilho doce',
-      '2. Queijo minas ralado',
-      '3. Leite',
-      '4. Óleo',
-      '5. Ovos',
-      '6. Sal',
-      '7. Fermento em pó',
-      '8. Manteiga',
-      '9. Queijo parmesão'
+      'Polvilho doce',
+      'Queijo minas ralado',
+      'Leite',
+      'Óleo',
+      'Ovos',
+      'Sal',
+      'Fermento em pó',
+      'Manteiga',
+      'Queijo parmesão'
     ]
   },
   {
+    id: 6,
     usuario: 'Ana_na_Cozinha',
     titulo: 'Lasanha de Carne',
     imagem: 'https://www.receiteria.com.br/wp-content/uploads/lasanha-de-carne-moida.jpeg',
@@ -119,15 +166,15 @@ const posts = [
     descricao: 'Receita de lasanha de carne com bastante queijo e sabor irresistível.',
     categoria: ['Salgados'],
     ingredientes: [
-      '1. Massa para lasanha',
-      '2. Carne moída',
-      '3. Molho de tomate',
-      '4. Cebola',
-      '5. Alho',
-      '6. Queijo mussarela',
-      '7. Presunto',
-      '8. Sal',
-      '9. Orégano'
+      'Massa para lasanha',
+      'Carne moída',
+      'Molho de tomate',
+      'Cebola',
+      'Alho',
+      'Queijo mussarela',
+      'Presunto',
+      'Sal',
+      'Orégano'
     ]
   },
 ];
@@ -171,6 +218,17 @@ router.get('/api/feed', (req, res) => {
     res.json(filtered);
   } else {
     res.json(posts);
+  }
+});
+
+router.get('/api/detalhes', (req, res) => {
+  const { id } = req.query;
+  const post = posts.find(p => p.id === parseInt(id));
+  
+  if (post) {
+    res.json(post);
+  } else {
+    res.status(404).json({ error: 'Receita não encontrada.' });
   }
 });
 

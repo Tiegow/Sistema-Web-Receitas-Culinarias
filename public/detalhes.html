@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalhes</title>
+
+  <!-- BOOTSTRAP -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <script src="js/bootstrap.bundle.min.js" defer></script>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/pages/detalhes.css">
+</head>
+<body>
+  <div id="header"></div>
+
+  <div id="recipe-detail-container" class="container">
+    <div class="recipe-post mt-5 px-4">
+      <div class="row justify-content-between">
+        <h3 class="col-auto">{{titulo}}</h3>
+
+        <div class="post-profile col-auto mb-3">
+            <div class="post-profile-img">
+                <img />
+            </div>
+            <div class="post-profile-info ms-2">
+                <p class="fw-bold my-0">@{{usuario}}</p>
+                <p class="my-0">{{data}}</p>
+            </div>
+        </div>
+      </div>
+
+      <p>{{descricao}}</p>
+      
+      <div class="ingredients-session row justify-content-between px-4">
+        <div class="col-auto">
+          <h4>Ingredientes</h4>
+
+          <div class="ingredientes-wrapper">
+
+          </div>
+        </div>
+
+        <div class="img-container">
+          <img src="{{imagem}}" alt="Imagem da receita">
+        </div>
+      </div>
+
+      <div class="preparation-session row px-4 mt-4">
+        <h4>Modo de Preparo</h4>
+
+      </div>
+      
+    </div>
+    <div class="post-actions row justify-content-between px-4 mt-4">
+      <div class="col-auto">
+          <button><img src="../img/Smile.png"> 1,5K</button>
+          <button id="like-btn"><img src="../img/Heart.png"><span id="likes"> 320 </span></button>
+          <button><img src="../img/Comments.png"> 15 </button>
+      </div>
+      <div class="col-auto">
+          <button><img src="../img/Star.png"></button>
+          <!-- <button><img src="../img/Upload.png"></button> -->
+      </div>
+    </div>
+  </div>
+
+  <!-- SCRIPT -->
+  <script src="js/global.js"></script>
+  <script src="js/pages/detalhes.js"></script>
+</body>
+</html>

@@ -39,30 +39,45 @@ async function renderReceitas(receitas) {
 
     // Inserir os ingredientes na lista dentro do card
     const wrapper = card.querySelector(".ingredientes-wrapper");
-    const lista = wrapper.querySelector(".ingredientes-list");
+    const btn = card.querySelector(".leia-mais-ingredientes");
+
+    card.addEventListener("click", () => {
+      window.location.href = '/detalhes?id=' + receita.id;
+    });
+    btn.addEventListener("click", () => {
+      window.location.href = '/detalhes?id=' + receita.id;
+    });
 
     container.appendChild(card);
 
-    const btn = wrapper.querySelector(".leia-mais-ingredientes");
+    if (receita.ingredientes && receita.ingredientes[0].session_title) {
+      receita.ingredientes.forEach(sessao => {
+        const h6 = document.createElement("h6");
+        h6.textContent = "Para " + sessao.session_title + ":";
+        wrapper.appendChild(h6);
 
-    // Insere até o limite de altura do card
-    receita.ingredientes.forEach(ingrediente => {
-      if (lista.scrollHeight <= wrapper.clientHeight) {
+        const lista = document.createElement("ul");
+        lista.classList.add("ingredientes-list");
+
+        wrapper.appendChild(lista);
+        
+        sessao.items.forEach(ingrediente => {
+          const li = document.createElement("li");
+          li.textContent = ingrediente;
+          lista.appendChild(li);
+        });
+      });
+    } else if (receita.ingredientes) {
+      const lista = document.createElement("ul");
+      lista.classList.add("ingredientes-list");
+      wrapper.appendChild(lista);
+
+      receita.ingredientes.forEach(ingrediente => {
         const li = document.createElement("li");
         li.textContent = ingrediente;
         lista.appendChild(li);
-      } else { // Apresenta o botao "Leia mais"
-        btn.classList.remove("d-none");
-
-        btn.addEventListener("click", (e) => {
-          e.preventDefault();
-
-          window.location.href = '/detalhes';
-        });
-
-        return;
-      }
-    });
+      });
+    }
   });
 }
 

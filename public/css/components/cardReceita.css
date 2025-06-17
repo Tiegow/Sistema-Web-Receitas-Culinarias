@@ -1,6 +1,8 @@
 .recipe-post {
-  width: fit-content;
+  width: 70%;
   margin: 0 auto;
+  padding-bottom: 30px;
+  border-bottom: 2px solid var(--cor-botao-secundario);
 }
 
 .post-profile-img {
@@ -22,12 +24,13 @@
 }
 
 .recipe-card {
+  cursor: pointer;
   font-size: 15px;
   display: flex; 
   background-color: var(--cor-branco); 
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-  max-width: 800px; 
+  /* max-width: 800px;  */
   overflow: hidden; 
   margin-bottom: 20px;
   text-align: left;
@@ -65,6 +68,11 @@
   color: #555;
   margin-top: 15px;
   margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.recipe-card h6 {
+  font-size: 14px;
   font-weight: bold;
 }
 
@@ -120,6 +128,19 @@
   color: var(--cor-primaria);
   cursor: pointer;
   font-weight: bold;
+}
+
+.post-actions button {
+  border: none;
+  background-color: inherit;
+  margin-right: 20px;
+  color: var(--cor-primaria);
+  font-size: 14px;
+}
+
+.post-actions img {
+  margin-right: 5px;
+  width: 36px;
 }
 
 /* Responsividade básica para telas menores */

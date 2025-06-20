@@ -1,0 +1,157 @@
+#add-container {
+    background-color: var(--cor-branco);
+    margin-top: 30px;
+    padding: 20px 30px;  
+    border-radius: 16px;
+}
+
+#add-container h4 {
+    color: var(--cor-secundaria);
+    font-weight: bold;
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+
+.add-form-container {
+  padding: 20px;
+  font-size: 16px;
+  background-color: var(--cor-branco); 
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+.receita-form {
+    display: flex;
+    flex-direction: row;
+    gap: 0;
+}
+
+.receita-form .input-box {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    width: 70%;
+}
+
+.input-box label {
+    font-weight: 500;
+}
+
+.receita-form .session-left,
+.receita-form .session-right {
+    flex: 1;
+    align-items: center;
+}
+.receita-form .session-left {
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid var(--cor-botao-secundario);
+}
+.receita-form .session-right {
+    display: flex;
+    flex-direction: column;
+    border-left: 1px solid var(--cor-botao-secundario);
+}
+
+.receita-form input {
+    margin-top: 10px;
+    font-size: 12px;
+    width: 100%;
+    padding: 12px 10px;
+    border: 2px solid #cecece;
+    border-radius: 10px;
+    background-color: var(--cor-branco);
+}
+
+.ingredientes-box {
+    border-top: 2px solid var(--cor-botao-secundario);
+    padding-top: 10px;
+    margin-bottom: 10px;
+}
+
+.sessoes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.input-box .ingrediente-input-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.input-box .ingrediente-input-header .session-input {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.session-title-input {
+    width: 140px;
+    margin-right: 10px;
+    border-radius: 5px;
+}
+
+.input-box .ingrediente-input-header img {
+    width: 30px;
+    margin: 0;
+    height: auto;
+}
+
+.add-ingrediente-btn img {
+    width: 30px;
+    height: auto;
+    cursor: pointer;
+    filter: brightness(0) saturate(100%) invert(25%) sepia(17%) saturate(1791%) hue-rotate(102deg) brightness(99%) contrast(88%);
+}
+
+.add-sessao {
+    width: 40%;
+    cursor: pointer;
+    color: var(--cor-branco);
+    background-color: var(--cor-primaria);
+    border: 1px solid var(--cor-texto-laranja);
+    border-radius: 5px;
+    font-size: 16px;
+    justify-content: center;
+}
+
+.add-sessao img {
+    width: 30px;
+    height: auto;
+}
+
+.receita-form textarea {
+    margin-top: 5px;
+    font-size: 12px;
+    width: 100%;
+    padding: 12px 10px;
+    border: 2px solid #cecece;
+    border-radius: 10px;
+    background-color: var(--cor-branco);
+}
+
+.img-preview {
+    width: 100%;
+    height: 250px;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-top: 10px;
+    background-color: var(--cor-botao-secundario);
+}
+
+.img-preview img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.prep-title {
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 10px;
+}

@@ -1,6 +1,23 @@
+const posts = require('./data.js');
 const express = require('express');
 const path = require('path');
+const multer = require('multer');
 const router = express.Router();
+
+// --- CONFIGURAÇÃO DO MULTER ---
+const storage = multer.diskStorage({
+  // Define a pasta de destino para os uploads
+  destination: function (req, file, cb) {
+    cb(null, 'public/uploads/');
+  },
+  // Define o nome do arquivo, adicionando um timestamp para torná-lo único
+  filename: function (req, file, cb) {
+    const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
+    cb(null, file.fieldname + '-' + uniqueSuffix + path.extname(file.originalname));
+  }
+});
+
+const upload = multer({ storage: storage });
 
 // PAGINAS
 // Rota principal - Redireciona para a página de login
@@ -20,179 +37,27 @@ router.get('/detalhes', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'detalhes.html'));
 })
 
-// REST
-// Simulação de BD
-const posts = [
-  {
-    id: 1,
-    usuario: 'Ana_na_Cozinha',
-    titulo: 'Bolo de Cenoura com Cobertura de Chocolate',
-    imagem: 'https://conteudo.imguol.com.br/c/entretenimento/c8/2023/01/31/bolo-de-cenoura-low-carb-fit-1675176378739_v2_300x400.jpg',
-    data: '05/05/2025',
-    descricao: 'Um clássico bolo de cenoura fofinho com cobertura de chocolate.',
-    categoria: ['Doces', 'Veganas'],
-    ingredientes: [
-      {
-        session_title: 'Massa',
-        items: [
-          '3 cenouras médias descascadas e picadas',
-          '3 ovos',
-          '2 xícaras de açúcar',
-          '1 xícara de óleo',
-          '2 xícaras de farinha de trigo',
-          '1 colher de sopa de fermento em pó',
-        ]
-      },
-      {
-        session_title: 'Cobertura',
-        items: [
-          '200g de chocolate meio amargo',
-          '1 caixinha de creme de leite',
-          '2 colheres de sopa de manteiga',
-        ]
-      },
-    ],
-    preparo: [
-      {
-        session_title: 'Massa',
-        items: [
-          'Preaqueça o forno a 180°C.',
-          'No liquidificador, bata as cenouras, ovos, açúcar e óleo até obter uma mistura homogênea.',
-          'Em uma tigela, misture a farinha de trigo e o fermento.',
-          'Despeje a mistura do liquidificador na tigela e mexa bem até incorporar.',
-          'Coloque em uma forma untada e enfarinhada e asse por cerca de 40 minutos ou até dourar.'
-        ]
-      },
-      {
-        session_title: 'Cobertura',
-        items: [
-          'Derreta o chocolate em banho-maria ou no micro-ondas.',
-          'Misture o creme de leite e a manteiga até obter uma cobertura lisa.',
-          'Despeje sobre o bolo já frio e sirva.'
-        ]
-      }
-    ]
-  },
-  {
-    id: 2,
-    usuario: 'Ana_na_Cozinha',
-    titulo: 'Pão de Queijo',
-    imagem: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuBRLjSAIm48zNKn-zUKET-HjSRfAdTNehuQ&s',
-    data: '03/05/2025',
-    descricao: 'Receita mineira autêntica de pão de queijo crocante por fora, macio por dentro.',
-    categoria: ['Salgados'],
-    ingredientes: [
-      'Polvilho doce',
-      'Queijo minas ralado',
-    ],
-    preparo: [
-      { session_title: 'Massa',
-        items: [
-          'Em uma tigela, misture 500g de polvilho doce com 250ml de leite quente.',
-          'Adicione 100ml de óleo e misture bem.',
-          'Incorpore 2 ovos, 200g de queijo minas ralado e sal a gosto.',
-          'Modele pequenas bolinhas e coloque em uma assadeira untada.',
-          'Asse em forno pré-aquecido a 180°C por cerca de 20 minutos ou até dourar.'
-        ]
-      },
-    ]
-  },
-  {
-    id: 3,
-    usuario: 'Ana_na_Cozinha',
-    titulo: 'Lasanha de Carne',
-    imagem: 'https://www.receiteria.com.br/wp-content/uploads/lasanha-de-carne-moida.jpeg',
-    data: '12/05/2025',
-    descricao: 'Receita de lasanha de carne com bastante queijo e sabor irresistível.',
-    categoria: ['Salgados'],
-    ingredientes: [
-      'Massa para lasanha',
-      'Carne moída',
-      'Molho de tomate',
-      'Cebola',
-      'Alho',
-      'Queijo mussarela',
-      'Presunto',
-      'Sal',
-      'Orégano'
-    ]
-  },
-  {
-    id: 4,
-    usuario: 'Ana_na_Cozinha',
-    titulo: 'Bolo de Cenoura',
-    imagem: 'https://conteudo.imguol.com.br/c/entretenimento/c8/2023/01/31/bolo-de-cenoura-low-carb-fit-1675176378739_v2_300x400.jpg',
-    data: '05/05/2025',
-    descricao: 'Um clássico bolo de cenoura fofinho com cobertura de chocolate.',
-    categoria: ['Doces'],
-    ingredientes: [
-      'Cenoura',
-      'Ovos',
-      'Açúcar',
-      'Óleo',
-      'Farinha de trigo',
-      'Fermento em pó',
-      'Chocolate em pó',
-      'Leite',
-      'Manteiga'
-    ]
-  },
-  {
-    id: 5,
-    usuario: 'Ana_na_Cozinha',
-    titulo: 'Pão de Queijo',
-    imagem: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuBRLjSAIm48zNKn-zUKET-HjSRfAdTNehuQ&s',
-    data: '03/05/2025',
-    descricao: 'Receita mineira autêntica de pão de queijo crocante por fora, macio por dentro.',
-    categoria: ['Salgados'],
-    ingredientes: [
-      'Polvilho doce',
-      'Queijo minas ralado',
-      'Leite',
-      'Óleo',
-      'Ovos',
-      'Sal',
-      'Fermento em pó',
-      'Manteiga',
-      'Queijo parmesão'
-    ]
-  },
-  {
-    id: 6,
-    usuario: 'Ana_na_Cozinha',
-    titulo: 'Lasanha de Carne',
-    imagem: 'https://www.receiteria.com.br/wp-content/uploads/lasanha-de-carne-moida.jpeg',
-    data: '12/05/2025',
-    descricao: 'Receita de lasanha de carne com bastante queijo e sabor irresistível.',
-    categoria: ['Salgados'],
-    ingredientes: [
-      'Massa para lasanha',
-      'Carne moída',
-      'Molho de tomate',
-      'Cebola',
-      'Alho',
-      'Queijo mussarela',
-      'Presunto',
-      'Sal',
-      'Orégano'
-    ]
-  },
-];
-
 // Simulação de login
 const USERS = [
-  { email: 'cookshare@gmail.com', password: '123456' },
+  { email: 'cookshare@gmail.com', password: '123456', username: 'CookShare' },
 ];
+
 router.post('/login', (req, res) => {
   const { email, password } = req.body;
   const user = USERS.find(u => u.email === email && u.password === password);
 
   if (user) {
-    res.sendStatus(200); 
+    // Remove a senha antes de enviar
+    const { password, ...userData } = user;
+
+    res.status(200).json({
+      message: 'Login bem-sucedido!',
+      user: userData 
+    });
   } else {
     res.status(404).json({ error: 'Usuário ou senha incorretos.'})
   }
-})
+});
 
 router.post('/register', (req, res) => {
   const { email, username, password } = req.body;
@@ -229,6 +94,122 @@ router.get('/api/detalhes', (req, res) => {
     res.json(post);
   } else {
     res.status(404).json({ error: 'Receita não encontrada.' });
+  }
+});
+
+// A rota agora usa o middleware 'upload.single()' antes de executar a lógica principal
+router.post('/api/publicar-receita', upload.single('imagem'), (req, res) => {
+  try {
+    // IMPORTANTE: Os dados complexos (arrays) vêm como strings, precisamos convertê-los de volta
+    const ingredientes = JSON.parse(req.body.ingredientes);
+    const preparo = JSON.parse(req.body.preparo);
+    const categoria = JSON.parse(req.body.categoria);
+    const tags = JSON.parse(req.body.tags);
+
+    // Os dados de texto simples vêm normalmente
+    const { titulo, descricao, data, usuario } = req.body;
+    
+    // Validação
+    if (!titulo || !descricao || !ingredientes || ingredientes.length === 0) {
+      return res.status(400).json({ error: 'Dados incompletos.' });
+    }
+
+    // Pega o caminho do arquivo salvo pelo multer para construir a URL
+    // req.file pode ser undefined se nenhum arquivo for enviado
+    const imagemUrl = req.file ? `/uploads/${req.file.filename}` : '/img/logo.png';
+
+    // Gera um novo ID único
+    const maxId = posts.reduce((max, post) => (post.id > max ? post.id : max), 0);
+    const newId = maxId + 1;
+
+    const novaReceita = {
+      id: newId,
+      titulo,
+      descricao,
+      imagem: imagemUrl, // <-- Usa a URL da imagem salva
+      data,
+      ingredientes,
+      preparo,
+      categoria, 
+      tags,
+      usuario,
+      comentarios: [],
+      likedBy: []
+    };
+
+    posts.push(novaReceita);
+    console.log('Nova receita adicionada com imagem:', novaReceita);
+    res.status(201).json(novaReceita);
+
+  } catch (error) {
+    console.error('Erro ao processar a receita:', error);
+    res.status(500).json({ error: 'Ocorreu um erro interno ao salvar a receita.' });
+  }
+});
+
+router.post('/api/posts/:postId/like', (req, res) => {
+  try {
+    const { postId } = req.params;
+    const username = req.body.username;
+
+    if (!username) {
+      return res.status(400).json({ error: 'Usuário não informado.' });
+    }
+
+    const post = posts.find(p => p.id === parseInt(postId));
+
+    if (!post) {
+      return res.status(404).json({ error: 'Post não encontrado.' });
+    }
+
+    // Lógica de "toggle":
+    const hasLiked = post.likedBy.includes(username);
+
+    if (hasLiked) {
+      post.likedBy = post.likedBy.filter(id => id !== username);
+    } else {
+      post.likedBy.push(username);
+    }
+
+    res.status(200).json({
+      likes: post.likedBy.length,
+      likedByUser: !hasLiked
+    });
+
+  } catch (error) {
+    res.status(500).json({ error: 'Ocorreu um erro no servidor.' });
+  }
+});
+
+router.post('/api/posts/:postId/comment', (req, res) => {
+  try {
+    const { postId } = req.params;
+    const { username, comText } = req.body; // Mantém os nomes que o servidor espera
+
+    if (!username || !comText) {
+      return res.status(400).json({ error: 'Usuário e comentário são obrigatórios.' });
+    }
+
+    const post = posts.find(p => p.id === parseInt(postId));
+
+    if (!post) {
+      return res.status(404).json({ error: 'Post não encontrado.' });
+    }
+
+    // Cria o novo objeto de comentário
+    const newComment = { autor: username, comentario: comText };
+
+    // Adiciona o novo comentário ao array
+    // Usar unshift() em vez de push() faz o novo comentário aparecer no topo da lista
+    post.comentarios.unshift(newComment); 
+
+    // --- MUDANÇA PRINCIPAL ---
+    // Responde com o status 201 (Created) e envia o comentário recém-criado de volta
+    res.status(201).json(newComment);
+
+  } catch (error) {
+    console.error('ERRO AO COMENTAR:', error);
+    res.status(500).json({ error: 'Ocorreu um erro no servidor.' });
   }
 });
 

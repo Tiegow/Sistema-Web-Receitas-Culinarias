@@ -75,3 +75,25 @@
 .preparation-session ul {
   list-style-type: decimal;
 }
+
+.autor-div {
+  margin-top: 20px;
+  width: fit-content;
+  
+}
+
+.comment-author {
+  font-size: 16px;
+  margin-bottom: 0;
+  background-color: var(--cor-primaria);
+  padding: 5px 20px;
+  border-radius: 10px 10px 0 0;
+  color: var(--cor-branco);
+}
+
+.comment-text {
+  margin: 0;
+  background-color: var(--cor-background);
+  padding: 20px 15px;
+  border-radius: 0 0 15px 15px;
+}

@@ -12,7 +12,12 @@ loginForm.addEventListener('submit', async function(event) {
         body: JSON.stringify({ email, password })
     });
 
+    const data = await res.json();
+
     if (res.ok) {
+        sessionStorage.setItem('userData', JSON.stringify(data.user));
+        // alert(data.message);
+
         window.location.href = '/feed';
     } else {
         const { error } = await res.json()

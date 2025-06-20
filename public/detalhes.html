@@ -57,13 +57,27 @@
     <div class="post-actions row justify-content-between px-4 mt-4">
       <div class="col-auto">
           <button><img src="../img/Smile.png"> 1,5K</button>
-          <button id="like-btn"><img src="../img/Heart.png"><span id="likes"> 320 </span></button>
-          <button><img src="../img/Comments.png"> 15 </button>
+          <button id="like-btn"><img src="../img/Heart.png"><span id="likes"> {{likes}} </span></button>
+          <button><img src="../img/Comments.png"> {{comentarios}} </button>
       </div>
       <div class="col-auto">
           <button><img src="../img/Star.png"></button>
           <!-- <button><img src="../img/Upload.png"></button> -->
       </div>
+    </div>
+
+    <div class="comments-section mt-5">
+      <h4>Comentários</h4>
+      <div id="comments-list" class="ps-3">
+        <!-- Comentários serão inseridos aqui dinamicamente -->
+      </div>
+      <form id="comment-form" class="mt-3">
+        <div class="mb-3">
+          <label for="comment-input" class="form-label">Adicionar um comentário</label>
+          <textarea class="form-control" id="comment-input" rows="3" placeholder="Escreva seu comentário..." style="resize: none;"></textarea>
+        </div>
+        <button type="button" class="botao-prim btn btn-primary" id="comment-btn">Comentar</button>
+      </form>
     </div>
   </div>
 

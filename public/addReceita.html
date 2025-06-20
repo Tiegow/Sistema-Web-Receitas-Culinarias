@@ -11,9 +11,95 @@
 
   <!-- CSS -->
   <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/pages/addReceita.css">
 </head>
 <body>
   <div id="header"></div>
+
+  <div id="add-container" class="container">
+    <h4>Nova Receita</h4>
+
+    <div class="add-form-container mt-4">
+      <form class="receita-form" id="receitaForm">
+        <div class="session-left">
+          <div class="input-box">
+            <label>Título</label>
+            <input type="text" name="titulo" required>
+          </div>
+
+          <div class="input-box">
+            <label>Descrição</label>
+            <input type="text" name="descricao" required>
+          </div>
+
+          <div class="my-2"></div>
+
+          <div class="sessoes-ingredientes sessoes" id="sessoes-ingredientes">
+            <div class="sessao container d-flex flex-column align-items-center" id="ingredientes-sessao-0">
+              <div class="input-box ingredientes-box">
+                <div class="ingrediente-input-header">
+                  <label>Ingredientes</label>
+
+                  <div class="session-input">
+                    <input class="session-title-input" type="text" name="session_title" id="session-0-title" placeholder="Seção (Ex.: Massa)" oninput="updateSessionTitle(this, 'prep-title-0')">
+                    <img src="img/list.png" alt="Nome da Seção de Ingredientes"/>
+                  </div>
+                </div>
+                
+                <input type="text" name="ingrediente" required>
+                <!-- Mais ingredientes sao adicionados aqui -->
+              </div>         
+              <div id="add-ingrediente-btn" class="add-ingrediente-btn" onclick="addIngredienteInput(this)">
+                <img src="img/add.png" alt="Adicionar Ingrediente">
+              </div>
+            </div>
+
+            <!-- Mais sessoes sao adicionadas aqui -->
+          </div>
+
+          <button class="botao-prim add-sessao d-flex align-items-center gap-2 mt-4 py-1 px-3" type="button" onclick="addNovaSessaoCompleta()">
+            <img src="./img/add.png" alt="add">Seção
+          </button>
+
+          <div class="sessoes-preparo sessoes" id="sessoes-preparo">
+            <div class="sessao container d-flex flex-column align-items-center" id="preparo-sessao-0">
+              <div class="input-box mt-4">
+                <label>Modo de Preparo</label>
+                <span class="prep-title prep-title-0" id="prep-title-0"></span>
+
+                <textarea name="modo" placeholder="Insira aqui o modo de preparo..." required></textarea>
+              </div> 
+            </div>
+
+            <!-- Mais sessoes sao adicionadas aqui -->
+          </div>   
+        </div>
+
+        <!-- PARTE DIREITA -->
+
+        <div class="session-right">
+          <div class="input-box">
+            <label for="imageInput" class="form-label">Selecione uma imagem</label>
+            <input class="form-control" type="file" id="imageInput" accept="image/*" onchange="previewImage(event)">
+          </div>
+
+          <div class="input-box img-preview">
+            <img id="imagePreview" src="#" alt="Preview da imagem" style="display: none;">
+          </div>          
+
+          <div class="input-box mt-4">
+            <label>Tags / Palavras-Chave</label>
+            <textarea class="mt-2" name="tags" placeholder="Insira aqui palavras-chave..." required></textarea>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="actions d-flex justify-content-end mt-4">
+      <button class="botao-sec btn btn-secondary me-2 fw-semibold" type="button" onclick="window.location.href='feed.html'">Cancelar</button>
+      <button class="botao-prim d-flex align-items-center gap-2 py-2 px-4 fw-semibold" type="button" id="submitBtn" onclick="publicarReceita()">Publicar Receita</button>
+    </div>
+  </div>
   
   <script src="js/global.js"></script>
   <script src="js/pages/addReceita.js"></script>

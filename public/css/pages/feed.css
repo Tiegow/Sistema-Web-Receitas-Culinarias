@@ -26,24 +26,7 @@
   min-height: 54px;
 }
 
-.feed .add {
-  color: var(--cor-branco);
-  background-color: var(--cor-primaria);
-  /* padding: 15px 20px; */
-  border: 1px solid var(--cor-preto);
-  border-radius: 5px;
-  font-size: 16px;
-}
-
-.feed .add img{
+.botao-prim img{
   width: 30px;
   margin-right: 10px;
-}
-
-.filter {
-  background-color: var(--cor-botao-secundario);
-  border: 1px solid var(--cor-preto);
-  min-width: 200px;
-  color: var(--cor-preto);
-  font-weight: bold;
 }

@@ -6,11 +6,14 @@ window.addEventListener('DOMContentLoaded', async () => {
 async function filterBy(categoria) {
   let response = null;
   let receitas = null;
+  const filterBtn = document.getElementById('recipeFilterDropdown');
 
   if (categoria) {
-    response = await fetch('/api/feed?categoria=' + categoria);
+    response = await fetch('/api/feed?categoria=' + categoria.toLowerCase());
+    filterBtn.textContent = categoria;
   } else {
     response = await fetch('/api/feed');
+    filterBtn.textContent = "Todas";
   }
   
   receitas = await response.json();
@@ -35,13 +38,21 @@ async function renderReceitas(receitas) {
       .replace('{{imagem}}', receita.imagem)
       .replace('{{titulo}}', receita.titulo)
       .replace('{{data}}', receita.data)
-      .replace('{{descricao}}', receita.descricao);
+      .replace('{{descricao}}', receita.descricao)
+      .replace('{{likes}}', receita.likedBy && receita.likedBy.length != null ? receita.likedBy.length : 320)
+      .replace('{{comentarios}}', receita.comentarios && receita.comentarios.length != null ? receita.comentarios.length : 15)
+
+    card.querySelector('#like-btn').addEventListener('click', (e) => {
+      const likeSpan = e.currentTarget.querySelector('#likes');
+
+      likePost(receita.id, likeSpan);
+    });
 
     // Inserir os ingredientes na lista dentro do card
     const wrapper = card.querySelector(".ingredientes-wrapper");
     const btn = card.querySelector(".leia-mais-ingredientes");
 
-    card.addEventListener("click", () => {
+    card.querySelector('.recipe-card').addEventListener("click", () => {
       window.location.href = '/detalhes?id=' + receita.id;
     });
     btn.addEventListener("click", () => {

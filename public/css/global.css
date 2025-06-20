@@ -57,3 +57,28 @@ header span{
     border-radius: 50%;
     background-color: var(--cor-botao-secundario);
 }
+
+.botao-prim {
+  color: var(--cor-branco);
+  background-color: var(--cor-primaria);
+  border: 1px solid var(--cor-preto);
+  border-radius: 5px;
+  transition: 0.2s;
+}
+
+.botao-sec {
+  background-color: var(--cor-botao-secundario);
+  border: 1px solid var(--cor-preto);
+  min-width: 200px;
+  color: var(--cor-preto);
+  font-weight: bold;
+}
+
+.botao-prim:hover {
+  background-color: #cf3a08;
+  color: var(--cor-branco);
+}
+
+.liked {
+    filter: brightness(2);
+}

@@ -49,6 +49,9 @@ header span{
 
 .header-actions img {
     margin-right: 40px;
+    width: 33px;
+    filter: brightness(0) saturate(100%) invert(38%) sepia(99%) saturate(834%) hue-rotate(341deg) brightness(99%) contrast(96%);
+    cursor: pointer;
 }
 
 .header-profile {
@@ -77,8 +80,39 @@ header span{
 .botao-prim:hover {
   background-color: #cf3a08;
   color: var(--cor-branco);
+  border: 1px solid #cf3a08;
 }
 
 .liked {
     filter: brightness(2);
+}
+
+@media screen and (max-width: 1200px) {
+    html, body {
+        font-size: 18px;
+    }
+    .header-logo img {
+        width: 250px;
+    }
+    header span {
+        font-size: 32px;
+        margin-left: 16px;
+    }
+    .header-actions img {
+        margin-right: 20px;
+    }
+    .botao-prim .botao-sec {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 485px) {
+    .header-logo img {
+        width: 80%;
+    }
+
+    .header-actions img {
+    margin-right: 20px;
+    width: 24px;
+}
 }

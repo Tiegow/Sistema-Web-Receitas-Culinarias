@@ -30,3 +30,55 @@
   width: 30px;
   margin-right: 10px;
 }
+
+#share-text-2 {
+  display: none;
+}
+
+#filter-img {
+  display: none;
+}
+
+@media screen and (max-width: 1200px) {
+  .botao-prim img {
+    width: 20px;
+    margin-right: 5px;
+  }
+
+  #share-text-2 {
+    display: block;
+  }
+
+  #share-text-1 {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 995px) {
+  .feed {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #share-text-2 {
+    display: none;
+  }
+
+  .botao-prim {
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    padding: 0 !important;
+    border: none;
+  }
+
+  .botao-prim img{ 
+    margin: 0 auto;
+  }
+
+  #filter-img {
+    width: 30px;
+    display: block;
+  }
+}

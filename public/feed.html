@@ -26,7 +26,7 @@
       <!-- Dropdown de filtros -->
       <div class="dropdown py-2">
         <button class="botao-sec btn btn-secondary dropdown-toggle py-2" type="button" id="recipeFilterDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-          Filtrar
+          <span id="filter-txt">Filtrar</span> <img src="img/filtro.png" id="filter-img">
         </button>
         <ul class="dropdown-menu" aria-labelledby="recipeFilterDropdown">
           <li><a class="dropdown-item" href="#" onclick="filterBy()">Todas</a></li>
@@ -39,7 +39,7 @@
       <!-- Botão de compartilhar -->
        <a href="/add-receita">
         <button class="botao-prim d-flex align-items-center gap-2 py-2 px-3" type="button">
-          <img src="./img/add.png" alt="add">Compartilhar receita
+          <img src="./img/add.png" alt="add"><span id="share-text-1">Compartilhar Receita</span><span id="share-text-2">Compartilhar</span>
         </button>
        </a>
     </div>

@@ -14,6 +14,9 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
+    scrollbar-width: thin;
+    scrollbar-color: var(--cor-primaria) var(--cor-background);
 }
 
 html, body {
@@ -48,10 +51,14 @@ header span{
 }
 
 .header-actions img {
-    margin-right: 40px;
+    margin-right: 20px;
     width: 33px;
     filter: brightness(0) saturate(100%) invert(38%) sepia(99%) saturate(834%) hue-rotate(341deg) brightness(99%) contrast(96%);
     cursor: pointer;
+}
+
+#logout {
+    margin: 0 15px;
 }
 
 .header-profile {
@@ -87,6 +94,20 @@ header span{
     filter: brightness(2);
 }
 
+::-webkit-scrollbar {
+    width: 12px;
+    background: var(--cor-background);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--cor-primaria);
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #cf3a08;
+}
+
 @media screen and (max-width: 1200px) {
     html, body {
         font-size: 18px;
@@ -97,9 +118,6 @@ header span{
     header span {
         font-size: 32px;
         margin-left: 16px;
-    }
-    .header-actions img {
-        margin-right: 20px;
     }
     .botao-prim .botao-sec {
         font-size: 16px;

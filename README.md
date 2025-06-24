@@ -13,6 +13,29 @@ da publicação de uma receita, como salvar receita, comentar ou curtir;
 - **Busca por nome da receita:** Campo de busca pelo nome de uma receita específica
 entre as listadas.
 
+🚀** Como rodar o projeto**
+Pré-requisitos
+Node.js e npm instalado
+
+npm instalado (geralmente vem com o Node)
+
+**Instalação**
+1. Clone o repositório:
+git clone https://github.com/seu-usuario/Sistema-Web-Receitas-Culinarias.git
+
+2. Navegue até a pasta do projeto:
+cd Sistema-Web-Receitas-Culinarias
+
+3.  Instale as dependências:
+npm install
+
+4. Execução
+Para iniciar o servidor local:
+npm start ou node server.js
+
+O servidor será iniciado em:
+👉 http://localhost:3000
+
 ## Relatório
 Acesse em: <a href="https://www.overleaf.com/read/nbnhtyjfvkmt#087a1c"> https://www.overleaf.com/read/nbnhtyjfvkmt#087a1c</a>
 

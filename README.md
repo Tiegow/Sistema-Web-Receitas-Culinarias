@@ -14,26 +14,30 @@ da publicação de uma receita, como salvar receita, comentar ou curtir;
 entre as listadas.
 
 
-🚀 Como rodar o projeto
-Pré-requisitos
-Node.js instalado
+## Como rodar o projeto 🚀
 
-npm instalado (geralmente vem com o Node)
+**Pré-requisitos**
+Node.js e npm instalado
 
-Instalação
-1. Clone o repositório:
+o npm instalado (geralmente vem com o Node)
+
+**Instalação**
+
+**1. Clone o repositório:**
+
 git clone https://github.com/seu-usuario/Sistema-Web-Receitas-Culinarias.git
 
-2. Navegue até a pasta do projeto:
+**2. Navegue até a pasta do projeto:**
 cd Sistema-Web-Receitas-Culinarias
 
-3.  Instale as dependências:
+**3.  Instale as dependências:**
 npm install
 
-4. Execução
+**4. Execução**
 Para iniciar o servidor local:
-npm start
-O servidor será iniciado em:
+npm start ou node server.js
+
+**O servidor será iniciado em:**
 👉 http://localhost:3000
 
 ## Relatório
